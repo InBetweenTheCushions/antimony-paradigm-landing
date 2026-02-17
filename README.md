@@ -1,5 +1,4 @@
 # Antimony Paradigm Company Profile
-
 This repository contains the source code for the Antimony Paradigm landing page—a sleek, modern digital interface designed to showcase the innovative spirit and technological sophistication of cutting-edge material science.
 
 ## 💎 The Vision
