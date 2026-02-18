@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Antimony Paradigm | The World of Tomorrow</title>
+  <title>Antimony Paradigm | Cutting-Edge Material Science</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Playfair+Display:italic,wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -20,20 +20,20 @@
 
   <style>
     :root {
-      --vintage-cream: #f4eee0;
-      --tomorrow-teal: #2c7a7b;
-      --bakelite-orange: #c05621;
-      --deep-charcoal: #1a202c;
-      --brass: #b79103;
+      --metallic-blue: #0f172a;
+      --deep-navy: #020617;
+      --vibrant-silver: #f8fafc;
+      --shimmer-text: #94a3b8;
+      --glass: rgba(255, 255, 255, 0.03);
     }
 
     body {
       margin: 0;
-      font-family: 'Oswald', sans-serif;
-      background-color: var(--vintage-cream);
-      color: var(--deep-charcoal);
+      font-family: 'Inter', sans-serif;
+      background-color: var(--deep-navy);
+      color: var(--vibrant-silver);
       overflow-x: hidden;
-      line-height: 1.4;
+      line-height: 1.6;
     }
 
     #antimony-canvas {
@@ -41,7 +41,7 @@
       top: 0;
       left: 0;
       z-index: -1;
-      opacity: 0.8;
+      opacity: 0.6;
     }
 
     header {
@@ -51,76 +51,83 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      border-bottom: 8px double var(--tomorrow-teal);
-      margin: 20px;
-      background: radial-gradient(circle, rgba(255,255,255,0.5) 0%, transparent 80%);
+      padding: 0 1.5rem;
     }
 
     .hero-title {
-      font-size: clamp(3rem, 10vw, 6rem);
+      font-size: clamp(2.5rem, 8vw, 5.5rem);
       font-weight: 700;
-      text-transform: uppercase;
       margin: 0;
-      color: var(--tomorrow-teal);
-      letter-spacing: 4px;
-      line-height: 0.9;
+      background: linear-gradient(180deg, #ffffff 0%, var(--shimmer-text) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.03em;
     }
 
-    .slogan {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
+    .hero-slogan {
+      font-size: 1.5rem;
       font-style: italic;
-      color: var(--bakelite-orange);
-      margin-top: 10px;
+      font-weight: 300;
+      margin-top: 0.5rem;
+      color: #ffffff;
+      letter-spacing: 0.05em;
+      opacity: 0; /* Initially hidden for GSAP animation */
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      margin-top: 1.5rem;
+      color: var(--shimmer-text);
+      font-weight: 300;
+      max-width: 600px;
     }
 
     .mission-section {
-      padding: 10rem 1.5rem;
+      padding: 15rem 1.5rem;
       max-width: 900px;
       margin: 0 auto;
+      text-align: center;
     }
 
     .mission-card {
-      background: white;
-      border: 3px solid var(--tomorrow-teal);
+      background: var(--glass);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       padding: 4rem 2rem;
-      box-shadow: 15px 15px 0px var(--tomorrow-teal);
+      border-radius: 24px;
       opacity: 0; 
-      transform: translateX(-50px);
+      transform: translateY(50px);
     }
 
     .mission-text {
-      font-size: 1.8rem;
-      text-transform: uppercase;
-      font-weight: 700;
-      color: var(--deep-charcoal);
-    }
-
-    .cta-button {
-      margin-top: 3rem;
-      display: inline-block;
-      padding: 1rem 3rem;
-      background: var(--tomorrow-teal);
-      color: white;
-      text-decoration: none;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      transition: all 0.3s ease;
-    }
-
-    .cta-button:hover {
-      background: var(--bakelite-orange);
-      transform: scale(1.05);
+      font-size: clamp(1.2rem, 4vw, 2rem);
+      font-weight: 400;
+      color: #ffffff;
+      margin: 0;
     }
 
     footer {
       padding: 4rem 1.5rem;
       text-align: center;
-      background: var(--tomorrow-teal);
-      color: var(--vintage-cream);
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      font-size: 0.95rem;
+      color: var(--shimmer-text);
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .cta-button {
+      margin-top: 2rem;
+      display: inline-block;
+      padding: 1rem 2rem;
+      background: #ffffff;
+      color: var(--deep-navy);
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .cta-button:hover {
+      transform: scale(1.05);
     }
   </style>
 </head>
@@ -130,20 +137,22 @@
 
   <header>
     <h1 class="hero-title">Antimony Paradigm</h1>
-    <p class="slogan">A step from perfection</p>
-    <a href="mailto:hello@antimonyparadigm.com" class="cta-button">Join the Future</a>
+    <p class="hero-slogan">A step from perfection</p>
+    <p class="hero-subtitle">Visualizing the intersection of advanced materials and industrial innovation.</p>
+    <a href="mailto:kilgatheatsbrainz@gmail.com" class="cta-button">Inquire Further</a>
   </header>
 
   <section class="mission-section">
     <div class="mission-card">
       <p class="mission-text">
-        Advancing the frontiers of science to build the world of tomorrow, today.
+        Our mission is to lead the seamless progression of material science, 
+        delivering sophisticated solutions for a forward-thinking world.
       </p>
     </div>
   </section>
 
   <footer>
-    <p>© 1940 - 2026 Antimony Paradigm · Industry & Progress</p>
+    <p>© 2026 Antimony Paradigm Studio · Web Design & Development</p>
   </footer>
 
   <script type="module">
@@ -151,41 +160,67 @@
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({ canvas: document.querySelector('#antimony-canvas'), alpha: true, antialias: true });
+    const renderer = new THREE.WebGLRenderer({ 
+      canvas: document.querySelector('#antimony-canvas'), 
+      alpha: true,
+      antialias: true 
+    });
     
+    renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
     camera.position.setZ(30);
 
-    // Brass/Gold geometric structure
     const geometry = new THREE.IcosahedronGeometry(12, 0);
     const material = new THREE.MeshStandardMaterial({ 
-      color: 0xb79103, 
-      metalness: 0.8, 
-      roughness: 0.2,
-      wireframe: false 
+      color: 0x94a3b8, 
+      metalness: 1, 
+      roughness: 0.1,
+      wireframe: true 
     });
     const structure = new THREE.Mesh(geometry, material);
     scene.add(structure);
 
-    const ambientLight = new THREE.AmbientLight(0xffffff, 1);
-    const pointLight = new THREE.PointLight(0xffffff, 500);
-    pointLight.position.set(20, 20, 20);
-    scene.add(ambientLight, pointLight);
+    const topLight = new THREE.PointLight(0xffffff, 800);
+    topLight.position.set(15, 15, 15);
+    const blueLight = new THREE.PointLight(0x3b82f6, 500);
+    blueLight.position.set(-15, -15, 10);
+    scene.add(topLight, blueLight);
 
     function animate() {
       requestAnimationFrame(animate);
-      structure.rotation.y += 0.005;
+      structure.rotation.x += 0.0015;
+      structure.rotation.y += 0.0015;
       renderer.render(scene, camera);
     }
     animate();
 
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+
+    // GSAP Animations
     gsap.registerPlugin(ScrollTrigger);
+
+    // Slogan Fade-in on load
+    gsap.to(".hero-slogan", {
+      opacity: 0.9,
+      duration: 1.5,
+      delay: 0.5,
+      ease: "power2.inOut"
+    });
+
+    // Mission Card Scroll Animation
     gsap.to(".mission-card", {
-      scrollTrigger: { trigger: ".mission-section", start: "top 80%" },
+      scrollTrigger: {
+        trigger: ".mission-section",
+        start: "top 75%",
+      },
       opacity: 1,
-      x: 0,
+      y: 0,
       duration: 1.2,
-      ease: "power2.out"
+      ease: "power3.out"
     });
   </script>
 </body>
